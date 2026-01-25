@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://jspark-inu.github.io/AB-lab/sitemap.xml
