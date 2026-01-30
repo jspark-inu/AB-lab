@@ -25,54 +25,12 @@ ninja.data = [{
           },
         },{id: "nav-projects",
           title: "projects",
-          description: "A growing collection of your cool projects.",
+          description: "Research interests and funded projects.",
           section: "Navigation",
           handler: () => {
             window.location.href = "/AB-lab/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "Edit the `_data/repositories.yml` and change the `github_users` and `github_repos` lists to include your own GitHub profile and repositories.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/AB-lab/repositories/";
-          },
-        },{id: "nav-cv",
-          title: "CV",
-          description: "This is a description of the page. You can modify it in &#39;_pages/cv.md&#39;. You can also change or remove the top pdf download button.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/AB-lab/cv/";
-          },
-        },{id: "nav-teaching",
-          title: "teaching",
-          description: "Course materials, schedules, and resources for classes taught.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/AB-lab/teaching/";
-          },
-        },{id: "nav-people",
-          title: "people",
-          description: "members of the lab or group",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/AB-lab/people/";
-          },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/AB-lab/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/AB-lab/blog/";
-              },
-            },{id: "post-a-post-with-plotly-js",
+        },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -440,15 +398,10 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/AB-lab/books/the_godfather/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
+            },},{id: "news-ab-lab이-오픈하였습니다-개국-멤버로-이혜진-김도현-박경이-합류하였습니다",
+          title: 'AB-LAB이 오픈하였습니다. 개국 멤버로 이혜진, 김도현, 박경이 합류하였습니다!',
           description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/AB-lab/news/announcement_2/";
-            },},{id: "projects-project-1",
+          section: "News",},{id: "projects-project-1",
           title: 'project 1',
           description: "with background image",
           section: "Projects",handler: () => {
