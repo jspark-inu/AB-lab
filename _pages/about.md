@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: About
 permalink: /
 subtitle: Algorithm & Behavior Lab at Incheon National University
 
