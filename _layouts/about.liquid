@@ -2,33 +2,30 @@
 layout: default
 ---
 
-<!-- ═══ Hero Banner ═══ -->
+<!-- ═══ Hero ═══ -->
 <div class="ab-hero">
-  <div class="ab-hero-bg">
-    <div class="ab-orb ab-orb-1"></div>
-    <div class="ab-orb ab-orb-2"></div>
-    <div class="ab-orb ab-orb-3"></div>
-  </div>
   <div class="container">
-    <div class="ab-hero-content">
-      <span class="ab-hero-label">Incheon National University · Department of Data Science</span>
-      <h1 class="ab-hero-title">
-        {% if site.title == 'blank' %}
-          <span class="font-weight-bold">{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
-        {% else %}
-          {{ site.title }}
-        {% endif %}
-      </h1>
-      {% if page.subtitle %}
-        <p class="ab-hero-subtitle">{{ page.subtitle }}</p>
+    <p class="ab-hero-label">
+      Incheon National University · Department of Data Science
+    </p>
+    <h1 class="ab-hero-title">
+      {% if site.title == 'blank' %}
+        <span>{{ site.first_name }}</span> {{ site.middle_name }} {{ site.last_name }}
+      {% else %}
+        {{ site.title }}
       {% endif %}
-    </div>
+    </h1>
+    {% if page.subtitle %}
+      <p class="ab-hero-subtitle">{{ page.subtitle }}</p>
+    {% endif %}
   </div>
 </div>
 
+<!-- ═══ Main Content ═══ -->
 <div class="post">
   <article>
-    <!-- Profile + Content -->
+
+    <!-- Profile + About text -->
     {% if page.profile %}
       <div class="profile float-{% if page.profile.align == 'left' %}left{% else %}right{% endif %}">
         {% if page.profile.image %}
@@ -49,16 +46,16 @@ layout: default
 
     <div class="clearfix">{{ content }}</div>
 
-    <!-- ═══ Research Area Cards ═══ -->
+    <!-- ═══ Research Cards ═══ -->
     {% if page.research_cards %}
-      <h2 class="ab-section-title">
+      <h2>
         <a href="{{ '/projects/' | relative_url }}" style="color: inherit">Research Areas</a>
       </h2>
       <div class="ab-research-grid">
         {% for card in page.research_cards %}
           <div class="ab-research-card">
-            <div class="ab-research-icon" style="background: {{ card.color | default: 'rgba(37,99,235,0.08)' }}; border-color: {{ card.border | default: 'rgba(37,99,235,0.15)' }}">
-              <iconify-icon icon="{{ card.icon }}" width="22" style="color: {{ card.icon_color | default: '#2563eb' }}"></iconify-icon>
+            <div class="ab-research-icon" style="background: {{ card.color }}; border: 1px solid {{ card.border }};">
+              <iconify-icon icon="{{ card.icon }}" width="24" style="color: {{ card.icon_color }}"></iconify-icon>
             </div>
             <h3>{{ card.title_ko }}</h3>
             <p class="ab-research-en">{{ card.title_en }}</p>
@@ -78,7 +75,7 @@ layout: default
     <!-- News -->
     {% if page.announcements and page.announcements.enabled %}
       <h2>
-        <a href="{{ '/news/' | relative_url }}" style="color: inherit">news</a>
+        <a href="{{ '/news/' | relative_url }}" style="color: inherit">News</a>
       </h2>
       {% include news.liquid limit=true %}
     {% endif %}
@@ -86,7 +83,7 @@ layout: default
     <!-- Latest posts -->
     {% if page.latest_posts and page.latest_posts.enabled %}
       <h2>
-        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">latest posts</a>
+        <a href="{{ '/blog/' | relative_url }}" style="color: inherit">Latest Columns</a>
       </h2>
       {% include latest_posts.liquid %}
     {% endif %}
@@ -94,7 +91,7 @@ layout: default
     <!-- Selected papers -->
     {% if page.selected_papers %}
       <h2>
-        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">selected publications</a>
+        <a href="{{ '/publications/' | relative_url }}" style="color: inherit">Selected Publications</a>
       </h2>
       {% include selected_papers.liquid %}
     {% endif %}

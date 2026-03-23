@@ -1,314 +1,198 @@
 /*******************************************************************************
- * AB Lab Custom Theme Overrides
- * Supanova-inspired clean structural design for academic lab website
+ * AB Lab Custom Theme — Nexo-inspired clean institutional design
+ * Dark navbar, generous spacing, card grid, serif+sans pairing
  ******************************************************************************/
 
 // ── Typography ──
 body {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif !important;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
   word-break: keep-all;
-  letter-spacing: -0.01em;
+  background-color: #ffffff !important;
+  color: #1a1a2e !important;
+  font-size: 16px;
+  line-height: 1.75;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  letter-spacing: -0.025em;
+  font-family: 'Pretendard', -apple-system, system-ui, sans-serif !important;
+  color: #1a1a2e;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
-// ── Navbar ──
+h1 { font-size: 2.5rem; font-weight: 800; }
+h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 1.5rem; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+
+p { color: #4a4a6a; line-height: 1.8; }
+
+a {
+  color: #2563eb;
+  transition: color 0.3s ease;
+  &:hover { color: #1d4ed8; text-decoration: none; }
+}
+
+// ── Navbar — Nexo dark style ──
 nav#navbar {
-  background: rgba(250, 250, 248, 0.8) !important;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-  box-shadow: 0 1px 12px rgba(0, 0, 0, 0.03);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  background: #1a1a2e !important;
+  border-bottom: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+
+  .container {
+    max-width: 1280px;
+    padding: 0 2rem;
+  }
 
   .navbar-brand {
+    color: #ffffff !important;
     font-weight: 700;
-    font-size: 1rem;
-    letter-spacing: -0.02em;
-    color: #18181b;
+    font-size: 1.1rem;
+    letter-spacing: -0.01em;
   }
 
   .nav-link {
-    font-size: 0.85rem;
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 0.88rem;
     font-weight: 500;
-    color: #a1a1aa !important;
-    transition: color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-    letter-spacing: 0;
+    padding: 1.2rem 0.9rem !important;
+    transition: color 0.3s ease;
 
-    &:hover {
-      color: #18181b !important;
-    }
+    &:hover { color: #ffffff !important; }
   }
 
   .nav-item.active .nav-link {
-    color: #18181b !important;
-    font-weight: 600;
+    color: #ffffff !important;
+  }
+
+  // Hamburger lines
+  .icon-bar { background-color: #ffffff !important; }
+
+  // Toggle button
+  .toggle-container button {
+    color: rgba(255,255,255,0.6) !important;
   }
 }
 
-html[data-theme="dark"] nav#navbar {
-  background: rgba(28, 28, 29, 0.85) !important;
-  border-bottom-color: rgba(255, 255, 255, 0.04);
+// Dark navbar needs light dropdown
+nav#navbar .dropdown-menu {
+  background: #1a1a2e;
+  border: 1px solid rgba(255,255,255,0.08);
 
-  .navbar-brand { color: #f4f4f5; }
-  .nav-link { color: #71717a !important; }
-  .nav-link:hover { color: #f4f4f5 !important; }
-  .nav-item.active .nav-link { color: #f4f4f5 !important; }
-}
-
-// ── Profile / About Page ──
-.profile {
-  .address {
-    p {
-      color: #71717a;
-      font-size: 0.9rem;
-    }
-  }
-}
-
-.about {
-  h1 {
-    font-size: 2.5rem;
-    font-weight: 800;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-}
-
-// ── Cards ──
-.card {
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  border-radius: 1rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03);
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  overflow: hidden;
-
-  &:hover {
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
-    transform: translateY(-2px);
-  }
-}
-
-// ── Publication Badges ──
-.badge-base {
-  font-size: 0.65rem;
-  font-weight: 600;
-  letter-spacing: 0.03em;
-  padding: 2px 8px;
-  border-radius: 4px;
-  display: inline-block;
-}
-
-// ── Footer ──
-footer {
-  background-color: #18181b !important;
-  color: #a1a1aa;
-  border-top: none;
-  padding: 2.5rem 0;
-
-  a {
-    color: #d4d4d8;
-    transition: color 0.3s ease;
-
+  .dropdown-item {
+    color: rgba(255,255,255,0.7);
     &:hover {
       color: #ffffff;
+      background: rgba(255,255,255,0.05);
     }
   }
 }
 
-// ── Links ──
-a {
-  transition: color 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+body.fixed-top-nav { padding-top: 60px; }
+
+// ── Container width ──
+.container {
+  max-width: 1280px !important;
 }
 
-// ── Buttons ──
-.btn-primary,
-.btn {
-  border-radius: 9999px;
-  font-weight: 600;
-  letter-spacing: -0.01em;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+// ── Page sections — generous padding ──
+.post {
+  article {
+    padding-top: 2rem;
 
-  &:hover {
-    transform: scale(1.02);
-  }
-
-  &:active {
-    transform: scale(0.98);
-  }
-}
-
-// ── News Section ──
-.news {
-  h2 {
-    font-weight: 700;
-    letter-spacing: -0.02em;
-  }
-}
-
-// ── Publications Page ──
-.bibliography {
-  ol {
-    li {
-      padding: 1rem 0;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.04);
-      transition: background 0.3s ease;
-
-      &:hover {
-        background: rgba(37, 99, 235, 0.02);
-      }
-
-      .title {
-        font-weight: 600;
-        letter-spacing: -0.01em;
-      }
+    > h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-top: 4rem;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 2px solid #f0f0f5;
     }
   }
 }
 
-// ── Smooth scroll ──
-html {
-  scroll-behavior: smooth;
+// ── Profile ──
+.profile {
+  img {
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+  }
+
+  .more-info {
+    p {
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+  }
 }
 
-// ── Selection color ──
-::selection {
-  background: rgba(37, 99, 235, 0.15);
-  color: #18181b;
-}
-
-// ── Noise texture (subtle paper feel) ──
-body::after {
-  content: '';
-  position: fixed;
-  inset: 0;
-  z-index: 9999;
-  pointer-events: none;
-  opacity: 0.015;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-}
-
-// ═══════════════════════════════════════════════
-// Hero Banner
-// ═══════════════════════════════════════════════
-
+// ── Hero section ──
 .ab-hero {
+  background: #1a1a2e;
+  padding: 120px 0 80px;
+  margin-top: -60px;
   position: relative;
   overflow: hidden;
-  padding: 100px 0 60px;
-  margin-top: -57px; // offset navbar padding
-  background: linear-gradient(180deg, #f0f4ff 0%, #FAFAF8 100%);
 
-  .container {
-    position: relative;
-    z-index: 2;
+  &::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(37,99,235,0.08) 0%, transparent 70%);
+    border-radius: 50%;
   }
-}
 
-.ab-hero-bg {
-  position: absolute;
-  inset: 0;
-}
-
-.ab-orb {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(100px);
-}
-
-.ab-orb-1 {
-  width: 400px; height: 400px;
-  background: rgba(37, 99, 235, 0.08);
-  top: -10%; left: 10%;
-  animation: ab-float 20s ease-in-out infinite;
-}
-
-.ab-orb-2 {
-  width: 300px; height: 300px;
-  background: rgba(6, 182, 212, 0.06);
-  top: 30%; right: 5%;
-  animation: ab-float 25s ease-in-out infinite 3s;
-}
-
-.ab-orb-3 {
-  width: 250px; height: 250px;
-  background: rgba(99, 102, 241, 0.05);
-  bottom: -10%; left: 40%;
-  animation: ab-float 22s ease-in-out infinite 6s;
-}
-
-@keyframes ab-float {
-  0%, 100% { transform: translate(0, 0); }
-  33% { transform: translate(30px, -20px); }
-  66% { transform: translate(-20px, 15px); }
-}
-
-.ab-hero-content {
-  max-width: 700px;
-  padding-top: 40px;
+  .container { position: relative; z-index: 2; }
 }
 
 .ab-hero-label {
   display: inline-block;
-  font-size: 0.7rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #2563eb;
-  background: rgba(37, 99, 235, 0.06);
-  border: 1px solid rgba(37, 99, 235, 0.1);
-  padding: 4px 14px;
-  border-radius: 999px;
-  margin-bottom: 1.5rem;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: 1.25rem;
 }
 
 .ab-hero-title {
   font-size: 3rem;
   font-weight: 800;
-  letter-spacing: -0.035em;
+  color: #ffffff !important;
+  letter-spacing: -0.03em;
   line-height: 1.15;
-  color: #18181b;
-  margin-bottom: 0.75rem;
+  margin-bottom: 1rem;
 
-  @media (min-width: 768px) {
-    font-size: 3.5rem;
-  }
+  @media (min-width: 768px) { font-size: 3.5rem; }
 }
 
 .ab-hero-subtitle {
   font-size: 1.05rem;
-  color: #71717a;
+  color: rgba(255,255,255,0.55);
   line-height: 1.7;
-  margin: 0;
+  max-width: 600px;
 }
 
-// ═══════════════════════════════════════════════
-// Research Area Cards
-// ═══════════════════════════════════════════════
-
+// ── Research Cards — Nexo-style grid ──
 .ab-section-title {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  margin-top: 3rem;
+  margin-top: 4rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid #f0f0f5;
 }
 
 .ab-research-grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-bottom: 3rem;
 
   @media (min-width: 768px) {
@@ -318,63 +202,46 @@ body::after {
 
 .ab-research-card {
   background: #ffffff;
-  border: 1px solid rgba(0, 0, 0, 0.04);
-  border-radius: 1.25rem;
-  padding: 1.75rem;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  overflow: hidden;
-
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 2px;
-    background: linear-gradient(90deg, #2563eb, #06b6d4);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
-  }
+  border: 1px solid #eeeef2;
+  border-radius: 16px;
+  padding: 2rem;
+  transition: all 0.4s ease;
 
   &:hover {
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
-    transform: translateY(-3px);
-
-    &::before {
-      transform: scaleX(1);
-    }
+    border-color: #d0d0e0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transform: translateY(-4px);
   }
 
   h3 {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     font-weight: 700;
-    letter-spacing: -0.01em;
-    margin-bottom: 0.15rem;
+    color: #1a1a2e;
+    margin-bottom: 0.25rem;
     margin-top: 0;
   }
 }
 
 .ab-research-icon {
-  width: 48px;
-  height: 48px;
+  width: 52px;
+  height: 52px;
   border-radius: 14px;
-  border: 1px solid;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 1.25rem;
+  margin-bottom: 1.5rem;
 }
 
 .ab-research-en {
-  font-size: 0.72rem;
-  color: #a1a1aa;
+  font-size: 0.75rem;
+  color: #9ca3af;
   letter-spacing: 0.02em;
   margin-bottom: 0.75rem;
 }
 
 .ab-research-desc {
-  font-size: 0.88rem;
-  color: #71717a;
+  font-size: 0.9rem;
+  color: #6b7280;
   line-height: 1.75;
   margin-bottom: 0;
 }
@@ -383,55 +250,113 @@ body::after {
   display: flex;
   flex-wrap: wrap;
   gap: 0.4rem;
-  margin-top: 1rem;
+  margin-top: 1.25rem;
 }
 
 .ab-tag {
-  font-size: 0.68rem;
-  background: #f4f4f5;
-  color: #71717a;
-  padding: 3px 10px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  background: #f5f5fa;
+  color: #6b7280;
+  padding: 4px 12px;
   border-radius: 999px;
-  border: 1px solid rgba(0, 0, 0, 0.03);
 }
 
-// ═══════════════════════════════════════════════
-// Dark mode overrides for hero & cards
-// ═══════════════════════════════════════════════
+// ── Cards (generic) ──
+.card {
+  border: 1px solid #eeeef2 !important;
+  border-radius: 12px !important;
+  box-shadow: none !important;
+  transition: all 0.4s ease;
+  overflow: hidden;
 
-html[data-theme="dark"] {
-  .ab-hero {
-    background: linear-gradient(180deg, #111118 0%, #0a0a0e 100%);
+  &:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06) !important;
+    transform: translateY(-2px);
   }
+}
 
-  .ab-hero-title { color: #f4f4f5; }
-  .ab-hero-subtitle { color: #71717a; }
-  .ab-hero-label {
-    color: #60a5fa;
-    background: rgba(96, 165, 250, 0.08);
-    border-color: rgba(96, 165, 250, 0.12);
+// ── Publications ──
+.bibliography {
+  ol {
+    li {
+      padding: 1.25rem 0;
+      border-bottom: 1px solid #f0f0f5;
+
+      .title {
+        font-weight: 600;
+        font-size: 0.95rem;
+        color: #1a1a2e;
+      }
+
+      .author { font-size: 0.85rem; color: #6b7280; }
+      .periodical { font-style: italic; color: #9ca3af; font-size: 0.85rem; }
+    }
   }
+}
 
-  .ab-orb-1 { background: rgba(59, 130, 246, 0.06); }
-  .ab-orb-2 { background: rgba(6, 182, 212, 0.04); }
-  .ab-orb-3 { background: rgba(99, 102, 241, 0.03); }
-
-  .ab-research-card {
-    background: #18181b;
-    border-color: rgba(255, 255, 255, 0.04);
-
-    &:hover {
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+// ── News ──
+.news {
+  table {
+    td {
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #f0f0f5;
+      vertical-align: top;
     }
 
-    h3 { color: #f4f4f5; }
+    .date { color: #9ca3af; font-size: 0.82rem; font-weight: 500; white-space: nowrap; padding-right: 1.5rem; }
+  }
+}
+
+// ── Buttons ──
+.btn-primary, .btn {
+  border-radius: 8px;
+  font-weight: 600;
+  padding: 0.6rem 1.5rem;
+  transition: all 0.3s ease;
+}
+
+// ── Footer — Nexo dark style ──
+footer {
+  background-color: #1a1a2e !important;
+  color: rgba(255,255,255,0.5) !important;
+  padding: 2.5rem 0 !important;
+  margin-top: 4rem !important;
+  border-top: none !important;
+
+  .container {
+    max-width: 1280px;
   }
 
-  .ab-research-desc { color: #a1a1aa; }
-
-  .ab-tag {
-    background: rgba(255, 255, 255, 0.05);
-    color: #a1a1aa;
-    border-color: rgba(255, 255, 255, 0.04);
+  a {
+    color: rgba(255,255,255,0.7) !important;
+    &:hover { color: #ffffff !important; }
   }
+}
+
+// ── Smooth scroll ──
+html { scroll-behavior: smooth; }
+
+// ── Selection ──
+::selection {
+  background: rgba(37, 99, 235, 0.15);
+  color: #1a1a2e;
+}
+
+// ── Dark mode ──
+html[data-theme="dark"] {
+  .ab-hero { background: #0d0d1a; }
+  .ab-hero-title { color: #f0f0f5 !important; }
+
+  .ab-research-card {
+    background: #1c1c2e;
+    border-color: #2a2a40;
+    h3 { color: #f0f0f5; }
+  }
+
+  .ab-research-desc { color: #9ca3af; }
+  .ab-tag { background: #2a2a40; color: #9ca3af; }
+
+  nav#navbar { background: #0d0d1a !important; }
+  footer { background-color: #0d0d1a !important; }
 }
