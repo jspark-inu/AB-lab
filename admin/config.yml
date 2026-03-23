@@ -1,0 +1,37 @@
+backend:
+  name: github
+  repo: jspark-inu/AB-lab
+  branch: main
+  auth_type: pkce
+  app_id: "Ov23lirczYoNkyyxcuXo"
+
+media_folder: "assets/img/uploads"
+public_folder: "/AB-lab/assets/img/uploads"
+
+collections:
+  # 뉴스/소식
+  - name: "news"
+    label: "뉴스"
+    label_singular: "뉴스"
+    folder: "_news"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "레이아웃", name: "layout", widget: "hidden", default: "post" }
+      - { label: "날짜", name: "date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: "HH:mm" }
+      - { label: "인라인 표시", name: "inline", widget: "hidden", default: true }
+      - { label: "관련 포스트", name: "related_posts", widget: "hidden", default: false }
+      - { label: "내용", name: "body", widget: "markdown" }
+
+  # 주요 페이지
+  - name: "pages"
+    label: "페이지"
+    files:
+      - label: "About (메인)"
+        name: "about"
+        file: "_pages/about.md"
+        fields:
+          - { label: "레이아웃", name: "layout", widget: "hidden", default: "about" }
+          - { label: "제목", name: "title", widget: "string" }
+          - { label: "퍼머링크", name: "permalink", widget: "hidden", default: "/" }
+          - { label: "내용", name: "body", widget: "markdown" }
