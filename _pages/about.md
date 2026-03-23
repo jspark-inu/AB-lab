@@ -13,8 +13,34 @@ profile:
     <p>College of Business Administration</p>
     <p>Incheon National University</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: true
+social: true
+
+research_cards:
+  - title_ko: "인간-AI 상호보완성"
+    title_en: "Human-AI Complementarity"
+    icon: "solar:brain-linear"
+    color: "rgba(37,99,235,0.08)"
+    border: "rgba(37,99,235,0.15)"
+    icon_color: "#2563eb"
+    description: "AI는 인간의 판단력을 대체하는 것이 아니라 보완하는 존재입니다. 인간과 AI가 각각의 강점을 살려 함께 의사결정할 수 있는 협업 모델을 연구합니다."
+    tags: ["Algorithmic Aversion", "Human-in-the-loop", "AI Acceptance"]
+  - title_ko: "행동 알고리즘 설계"
+    title_en: "Behavioral Algorithm Design"
+    icon: "solar:routing-2-linear"
+    color: "rgba(6,182,212,0.08)"
+    border: "rgba(6,182,212,0.15)"
+    icon_color: "#0891b2"
+    description: "넛지, 기본값 설정, 선택 아키텍처 등 행동과학적 원리를 알고리즘에 녹여내어 사용자 경험을 향상시킵니다."
+    tags: ["Digital Nudging", "Choice Architecture", "Default Effects"]
+  - title_ko: "알고리즘 마찰"
+    title_en: "Algorithmic Friction"
+    icon: "solar:shield-check-linear"
+    color: "rgba(245,158,11,0.08)"
+    border: "rgba(245,158,11,0.15)"
+    icon_color: "#d97706"
+    description: "때로는 속도를 늦추는 것이 더 나은 결정을 이끕니다. 의도적 마찰이 충동적 의사결정을 방지하고 숙고를 유도하는 메커니즘을 연구합니다."
+    tags: ["Deliberation", "Friction Design", "Impulse Prevention"]
 
 announcements:
   enabled: true # includes a list of news items
